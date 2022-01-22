@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: rgb(57, 55, 55); */
+  /* color:#fff; */
+ 
+}
+
+
+
+
+.preview-card-banner {
+  width: 100%
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
+  border-radius: 5px;
+}
+
+h3,
+p,
+h2 {
+  margin: 0px;
+}
+.loading{
+  margin-left:auto;
+  margin-right: auto;
+  color:#fff;
+}
+.gallery-container {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#464646;
+  color:#fff;
+  height: 75vh;
+  margin-top:20px;
+}
+.no-image {
+  padding-top: 100px;
+  text-align: center;
+}
+.no-image > h2 {
+  margin-top : 10px;
+}
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+.gallery{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+.gallery-photo-container{
+  width:30%;
+  margin-top: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.gallery-photo {
+
+}
+.upload-btn {
+  width:100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+i {
+  color:#fff;
+}
+
+.actions {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+}
