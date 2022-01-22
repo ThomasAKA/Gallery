@@ -7,14 +7,14 @@ const fs = require('fs')
 const axios = require('axios')
 const { Photo } = require('./db')
 const { json } = require('express')
-const  Picture = new Photo()
+// const  Picture = new Photo()
 
 app.use(cors())
 
 app.post('/photos',upload.single('file'),(req,res) => {
-    console.log(req.file.filename)
+    // console.log(req.file.filename)
     const formData = new FormData()
-    const file = fs.createReadStream(`/tmp/${req.file.filename}`)
+    const file = fs.createReadStream(`./gallery/${req.file.filename}`)
     formData.append('file',file)
     formData.append('UPLOADCARE_PUB_KEY','70fe9c19bb0482485ef8')
     axios.post(`https://upload.uploadcare.com/base/`,formData,{
@@ -25,6 +25,7 @@ app.post('/photos',upload.single('file'),(req,res) => {
         if(response.status !== 200){
             return res.json({status:200,message: 'Internal Server Error'})
         }
+        const  Picture = new Photo()
         Picture.id = response.data.file,
         Picture.url = 'https://ucarecdn.com/' + response.data.file + '/' + req.file.filename,
         Picture.status =  'A'
@@ -50,7 +51,7 @@ app.get('/photos',(req,res) => {
                 message: 'Internal Server Error',
             }) 
         }
-        console.log(data)
+        // console.log(data)
         return res.json({
             status:200,
             message: 'success',

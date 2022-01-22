@@ -4,7 +4,7 @@ const fs = require('fs')
 const childProcess = require('child_process')
 const storage = multer.diskStorage({
     destination: (req,file,cb) => {
-        cb(null,'/tmp')
+        cb(null,'./gallery')
     },
     filename : (req,file,cb) => {
         const uniqueSuffix = Math.round(Math.random() * 1E9) 

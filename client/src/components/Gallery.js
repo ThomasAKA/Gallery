@@ -25,7 +25,7 @@ const Gallery = (props) => {
            console.log(data)
            setData(data)
            setLoading(false)
-        })
+        }).catch(err => {setLoading(false);setData([])})
     },[])
 
     const setOpen = (value) => {
@@ -57,7 +57,7 @@ const Gallery = (props) => {
                 <img src={photo.url} />
             </ModalBody>
             <ModalFooter>
-                <Button onClick={() =>handleDelete(photo.id)}>{loading? 
+                <Button onClick={() =>handleDelete(photo.id)} className='delete-btn'>{loading? 
                       <Spinner
                       color="secondary"
                       type="grow"
@@ -84,7 +84,7 @@ const Gallery = (props) => {
                      <div>
                        <img  src={album}  className="logo"/>
                      </div>
-                        <Button onClick={() => setModal(!showModal)}>Upload</Button>
+                        <Button className='upload-btn' onClick={() => setModal(!showModal)}>Upload</Button>
                      {/* <h2>No Image</h2> */}
                      </div> : photos
                 }
